@@ -17,7 +17,8 @@
 - The file functions module was also tested and is working, and it is left for use in future modules like MythTV, MXF, GXF, etc.
 
 #### Week 2  
-[Pull Request #1649](https://github.com/CCExtractor/ccextractor/pull/1649)  
+[Pull Request #1649](https://github.com/CCExtractor/ccextractor/pull/1649) 
+[Specific Changes I made to this branch](https://github.com/CCExtractor/ccextractor/pull/1649/commits/e04b43017138c3c1e94c245e9d1dd01de293dbed)<br>
 AND  
 [Pull Request #1662](https://github.com/CCExtractor/ccextractor/pull/1662)
 

@@ -28,3 +28,13 @@ AND
 - After the GPAC servers were back up, resolved CI issues regarding Windows, tested all Windows regressions, and fixed several issues—especially catching a large error with the handles used in Windows to describe a file.
 - Completed Regression Testing on Windows.
 - Added more minor documentation to both modules.
+
+#### Week 2  
+[Pull Request #1](https://github.com/steel-bucket/ccextractor/pull/1) 
+AND  
+[Commit e2d753](https://github.com/CCExtractor/ccextractor/pull/1662/commits/5184ac5bd9645658a4eb3cb7ecdacd7ce6e2d753)
+
+- Re-Wrote the entire gxf module in Rust alongside. The GXF module comprises of the `ccx_gxf.c` and `ccx_gxf.h` files.
+- Made Extern functions, wrote unit tests, and got the functions working akin to C.
+- Wrote 2 Data Transfer Modules, for demuxer_data and ccx_gxf comprising of all incumbent enums for transferring data between C and Rust both ways.
+- Refactored all of the functions in [#1662](https://github.com/CCExtractor/ccextractor/pull/1662) based on Rust Best Practice, using `impl` instead of raw functions.

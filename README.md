@@ -34,8 +34,9 @@ AND
 AND  
 [Commit e2d753](https://github.com/CCExtractor/ccextractor/pull/1662/commits/5184ac5bd9645658a4eb3cb7ecdacd7ce6e2d753)
 
-- Re-Wrote the entire gxf module in Rust alongside. The GXF module comprises of the `ccx_gxf.c` and `ccx_gxf.h` files.
+- Re-Wrote the entire gxf module in Rust alongside adjusting unit tests. The GXF module comprises of the `ccx_gxf.c` and `ccx_gxf.h` files.
 - Made Extern functions, wrote unit tests, and got the functions working akin to C.
+- Some of the logic was already written by me in the Community Bonding period, I had to write more to finish it, and then test it and clear all warnings and regressions.
 - Wrote 2 Data Transfer Modules in the `libccxr_exports` directory, for demuxer_data and ccx_gxf comprising of all incumbent enums for transferring data between C and Rust both ways.
 - Made sure all of the regressions were working akin to the main branch.
-- Refactored all of the functions in [#1662](https://github.com/CCExtractor/ccextractor/pull/1662) based on Rust Best Practice, using `impl` instead of raw functions.
+- Refactored all of the `ctorust` functions in [#1662](https://github.com/CCExtractor/ccextractor/pull/1662) based on Rust Best Practice, using `impl` instead of raw functions.

@@ -47,8 +47,9 @@ AND
 AND
 [Pull Request #1706](https://github.com/CCExtractor/ccextractor/pull/1706)
 
-- Wrote the entire MXF module in Rust alongside the Data Transfer Module for MXFContext and Unit Testing and Formatting.
+- Wrote the entire MXF module in Rust  alongside Unit Testing and Formatting.
+- Made the Data Transfer Module for MXFContext and made Extern functions in libccxr_exports for the MXF Module.
 - This Module entails the Entire Rust Porting of the files `ccx_demuxer_mxf.c` and `ccx_demuxer_mxf.h`.
-- Regression tested the MXF Rust module against the MXF file in the CCExtractor Sample Platform. [Link](https://sampleplatform.ccextractor.org/sample/057c1fbc2d9f82691ae0b2150f95765a9c9d894ce1eb297229a05a242650b31a). And got it working
+- Regression tested the MXF Rust module against the MXF file in the CCExtractor Sample Platform. [Link](https://sampleplatform.ccextractor.org/sample/057c1fbc2d9f82691ae0b2150f95765a9c9d894ce1eb297229a05a242650b31a). And confirmed it to be working
 - Fixed Clippy errors introduced to the CCExtractor Codebase after Rust v1.88.
 - Fixed Clippy errors in the Demuxer Branch as well and rebased that branch.

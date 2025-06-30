@@ -40,3 +40,11 @@ AND
 - Wrote 2 Data Transfer Modules in the `libccxr_exports` directory, for demuxer_data and ccx_gxf comprising of all incumbent enums for transferring data between C and Rust both ways.
 - Made sure all of the regressions were working akin to the main branch.
 - Refactored all of the `ctorust` functions in [#1662](https://github.com/CCExtractor/ccextractor/pull/1662) based on Rust Best Practice, using `impl` instead of raw functions.
+
+#### Week 4
+[Pull Request #2](https://github.com/steel-bucket/ccextractor/pull/2) <br>
+[Commit 6dc3b9](https://github.com/CCExtractor/ccextractor/pull/1662/commits/8ab4f837da10be074607c92a484929814671010d) <br>
+AND
+[Pull Request #1706](https://github.com/CCExtractor/ccextractor/pull/1706)
+
+-

@@ -55,7 +55,7 @@ AND
 - Fixed Clippy errors in the Demuxer Branch as well and rebased that branch.
 
 #### Week 5
-[Pull Request #3](https://github.com/steel-bucket/ccextractor/pull/3)
+[Pull Request #3](https://github.com/steel-bucket/ccextractor/pull/3) <br>
 Changes to [Bitstream](https://github.com/CCExtractor/ccextractor/pull/1649) <br>
 AND
 [Pull Request #1708](https://github.com/CCExtractor/ccextractor/pull/1708)

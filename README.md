@@ -47,9 +47,23 @@ AND
 AND
 [Pull Request #1706](https://github.com/CCExtractor/ccextractor/pull/1706)
 
-- Wrote the entire MXF module in Rust  alongside Unit Testing and Formatting.
+- Wrote the entire MXF module in Rust, alongside Unit Testing and Formatting.
 - Made the Data Transfer Module for MXFContext and made Extern functions in libccxr_exports for the MXF Module.
 - This Module entails the Entire Rust Porting of the files `ccx_demuxer_mxf.c` and `ccx_demuxer_mxf.h`.
 - Regression tested the MXF Rust module against the MXF file in the CCExtractor Sample Platform. [Link](https://sampleplatform.ccextractor.org/sample/057c1fbc2d9f82691ae0b2150f95765a9c9d894ce1eb297229a05a242650b31a). And confirmed it to be working
 - Fixed Clippy errors introduced to the CCExtractor Codebase after Rust v1.88.
 - Fixed Clippy errors in the Demuxer Branch as well and rebased that branch.
+
+#### Week 5
+[Pull Request #3](https://github.com/steel-bucket/ccextractor/pull/3)
+Changes to [Bitstream](https://github.com/CCExtractor/ccextractor/pull/1649) <br>
+AND
+[Pull Request #1708](https://github.com/CCExtractor/ccextractor/pull/1708)
+
+- Wrote the Entire MythTV Module in Rust, alongside Unit Testing and Formatting
+- Made a Data Transfer Module for AVPacketMythTV(renamed from AVPacket) and made Extern functions in libccxr_exports for the MythTV Module.
+- This Module entails the Entire Rust Re-writing of the file `myth.c`.
+- Regression Tested it against the Myth TS Sample from the Sample Platform [Link](https://sampleplatform.ccextractor.org/sample/121), And confirmed it to be successfully extracting the subtitles.
+- Fixed Clashes between the MythTV module and libavutil in hardsubx build.
+- Made all Recommended changes by mentors in the bitstream module and got it merged after discussion and some patches.
+- Audited my old changes to the decoder module and made a PR($1708) fixing errors happening in XDS and General Regression Tests.

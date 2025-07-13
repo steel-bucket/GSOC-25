@@ -72,9 +72,9 @@ AND
 [Pull Request #1710](https://github.com/CCExtractor/ccextractor/pull/1710) <br>
 Changes to Encoding Module(same pr) <br> 
 AND <br>
-Preview PRs [#1711](https://github.com/CCExtractor/ccextractor/pull/1711) [[#1712](https://github.com/CCExtractor/ccextractor/pull/1712) [[#1713](https://github.com/CCExtractor/ccextractor/pull/1713)
+Preview PRs [#1711](https://github.com/CCExtractor/ccextractor/pull/1711) [#1712](https://github.com/CCExtractor/ccextractor/pull/1712) [#1713](https://github.com/CCExtractor/ccextractor/pull/1713)
 
-- Started on the Development for the Encoder(Writer) module, alongside CI Issues and formatting.
+- Kickstarted the Development for the Encoder(Writer) module, alongside CI Issues and formatting.
 - This Module Entails the porting of most helper functions in `ccx_encoders_common.c`, the TXT file encoding, and the library `ccx_encoders_g608.c`.
 - Using the `get_str_basic` function(plugged in to rust), now all of the "writing" into TXT files is done through rust.
 - Regression Tested against a sample, identified problems in the `encoding` module.

@@ -67,3 +67,16 @@ AND
 - Fixed Clashes between the MythTV module and libavutil in hardsubx build.
 - Made all Recommended changes by mentors in the bitstream module and got it merged after discussion and some patches.
 - Audited my old changes to the decoder module and made a PR($1708) fixing errors happening in XDS and General Regression Tests.
+
+#### Week 6
+[Pull Request #1710](https://github.com/CCExtractor/ccextractor/pull/1710) <br>
+Changes to Encoding Module(same pr) <br> 
+AND <br>
+Preview PRs [#1711](https://github.com/CCExtractor/ccextractor/pull/1711) [[#1712](https://github.com/CCExtractor/ccextractor/pull/1712) [[#1713](https://github.com/CCExtractor/ccextractor/pull/1713)
+
+- Started on the Development for the Encoder(Writer) module, alongside CI Issues and formatting.
+- This Module Entails the porting of most helper functions in `ccx_encoders_common.c`, the TXT file encoding, and the library `ccx_encoders_g608.c`.
+- Using the `get_str_basic` function(plugged in to rust), now all of the "writing" into TXT files is done through rust.
+- Regression Tested against a sample, identified problems in the `encoding` module.
+- Fixed the `line21_to_utf8` function in the encoding module.
+- Rebased my 3 previous PRs and made 3 main repo PRs for previewing(they are now attached to each other in my repo, for previewing specific changes and also to the main repo to be seen in the main branch), as recommended in weekly meet.

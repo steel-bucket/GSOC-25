@@ -80,3 +80,13 @@ Preview PRs [#1711](https://github.com/CCExtractor/ccextractor/pull/1711) [#1712
 - Regression Tested against a sample, identified problems in the `encoding` module.
 - Fixed the `line21_to_utf8` function in the encoding module.
 - Rebased my 3 previous PRs and made 3 main repo PRs for previewing(they are now attached to each other in my repo, for previewing specific changes and also to the main repo to be seen in the main branch), as recommended in weekly meet.
+
+#### Week 7
+[Pull Request #4](https://github.com/steel-bucket/ccextractor/pull/4) OR [Pull Request #1717](https://github.com/CCExtractor/ccextractor/pull/1717)
+Both are the same, one is for preview
+
+- Kickstarted the Development of the Transport stream module, alongside CI Issues and formatting.
+- This module entails porting of most of the functions in `ts_tables.c`
+- I shall be adding more and more modules to Complete TS by Week 9 alongside Stream Functions.
+- Resolved problems regarding `cinfo_tree`, which is a collection of linked lists and removed it from CcxDemuxer as it requires working on a shared data like in `parse_PMT` or `update_capinfo`.
+- `parse_PMT` works locally but needs more testing so it should be released by next week.

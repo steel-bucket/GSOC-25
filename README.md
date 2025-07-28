@@ -90,3 +90,13 @@ Both are the same, one is for preview
 - I shall be adding more and more modules to Complete TS by Week 9 alongside Stream Functions.
 - Resolved problems regarding `cinfo_tree`, which is a collection of linked lists and removed it from CcxDemuxer as it requires working on a shared data like in `parse_PMT` or `update_capinfo`.
 - `parse_PMT` works locally but needs more testing so it should be released by next week.
+
+#### Week 8
+[Pull Request #5](https://github.com/steel-bucket/ccextractor/pull/5) OR [Pull Request #1720](https://github.com/CCExtractor/ccextractor/pull/1720)
+Both are the same, one is for preview
+
+- Worked on more of the TS library, porting the entire XMLTV library to Rust.
+- This PR entails the rust migration of the entire `ts_tables_epg.c`library.
+- Resolved most issues with the library's linux interface. Somehow there are some minute differences between my extracted subtitles and the original ones, particularly in the spanish é and á characters.
+- Resolved all CI tests, except one, Also there's a weird seg fault during extracting from XMLTV files in Windows which I'll also look into.
+- I shall be working on these imperfections, and the failing CI test later, I couldn't do it on 1 week alone as it's quite a large library.

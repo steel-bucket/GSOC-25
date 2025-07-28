@@ -98,5 +98,6 @@ Both are the same, one is for preview
 - Worked on more of the TS library, porting the entire XMLTV library to Rust.
 - This PR entails the rust migration of the entire `ts_tables_epg.c`library.
 - Resolved most issues with the library's linux interface. Somehow there are some minute differences between my extracted subtitles and the original ones, particularly in the spanish é and á characters.
+- Tested it to be completely working, testing against [Sample #127](https://sampleplatform.ccextractor.org/sample/127) from the sample platform.
 - Resolved all CI tests, except one, Also there's a weird seg fault during extracting from XMLTV files in Windows which I'll also look into.
 - I shall be working on these imperfections, and the failing CI test later, I couldn't do it on 1 week alone as it's quite a large library.

@@ -116,5 +116,6 @@ Review Changes to [Pull Request #1710](https://github.com/CCExtractor/ccextracto
 - Finished the leftover functions from the stream_functions module from my original Demuxer PR.
 - This week's work focuses on porting the files `ts_tables.c`,`ts_functions.c`,`ts_functions.h`,`ts_info.c`(some parts of it I didn't require),`ts_tables_epg.c`, and `stream_functions.c` to Rust.
 - Cross Platform Tested on Windows as well and resolved type issues with the TS module.
+- Note - The TS module is a bit slow because of the copying back and forth between rust and C every few chunks(basically the get_more_data implementation which works on most types of files), so maybe we could unplug it in production. We could replug it back to Rust after the core lib_ccx is made in Rust. 
 - Fixed 2 of the Major issues with Week 8's PR, particularly the segfault with xmltv files for windows and the failing Mac test.
 - Resolved all pertaining review comments in the Encoder PR, collaborating with my Mentor.

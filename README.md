@@ -101,3 +101,18 @@ Both are the same, one is for preview
 - Tested it to be completely working, testing against [Sample #127](https://sampleplatform.ccextractor.org/sample/127) from the sample platform.
 - Resolved all CI tests, except one(FIXED!!), Also there's a weird seg fault during extracting from XMLTV files in Windows which I'll also look into(FIXED!!).
 - I shall be working on these imperfections, and the failing CI test later, I couldn't do it on 1 week alone as it's quite a large library.
+
+#### Week 9
+[Pull Request #6](https://github.com/steel-bucket/ccextractor/pull/6) OR [Pull Request #1724](https://github.com/CCExtractor/ccextractor/pull/1724)<br>
+Both are the same, one is for preview<br>
+Some changes to [Pull Request #5](https://github.com/steel-bucket/ccextractor/pull/5)<br>
+AND<br>
+Review Changes to [Pull Request #1710](https://github.com/CCExtractor/ccextractor/pull/1710)
+
+- Finally Finished the TS library, now all subtitles from TS files can be Extracted using Rust.
+- Fixed Mac CI tests failing in TS module. Made sure all the CI tests are passing with Formatting and build issues.
+- The TS library was tested against 4 TS files, 3 from the sample platform Sample [#96efd2](https://sampleplatform.ccextractor.org/sample/96efd279cfa1dddcb1d7d38ecc5ebd6d870a661452c6480804c30a9896037336), [#b2260x](https://sampleplatform.ccextractor.org/sample/b22260d065ab537899baaf34e78a5184671f4bcb2df0414d05e6345adfd7812f), [#c83f765](https://sampleplatform.ccextractor.org/sample/c83f765c661595e1bfa4750756a54c006c6f2c697a436bc0726986f71f0706cd) and a [hauppauge sample from dropbox](https://www.dropbox.com/scl/fi/4b1y86efag39sjnmm65hs/all_in_with_chris_hayes_20250326_1958.ts?rlkey=tyid6blj5hvsbyhg1mxs9nvr8&st=557jrkq8&dl=0)
+- There are some issues still pertaining here. There are some symbols being printed out with the xmltv files and the debug release on linux(but not windows) sometimes gives a seg fault. The normal release works fine.
+- Cross Platform Tested on Windows as well and resolved type issues with the TS module.
+- Fixed 2 of the Major issues with Week 8's PR, particularly the segfault with xmltv files for windows and the failing Mac test.
+- Resolved all pertaining review comments in the Encoder PR, collaborating with my Mentor.

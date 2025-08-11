@@ -114,8 +114,19 @@ Review Changes to [Pull Request #1710](https://github.com/CCExtractor/ccextracto
 - The TS library was tested against 4 TS files, 3 from the sample platform Sample [#96efd2](https://sampleplatform.ccextractor.org/sample/96efd279cfa1dddcb1d7d38ecc5ebd6d870a661452c6480804c30a9896037336), [#b2260x](https://sampleplatform.ccextractor.org/sample/b22260d065ab537899baaf34e78a5184671f4bcb2df0414d05e6345adfd7812f), [#c83f765](https://sampleplatform.ccextractor.org/sample/c83f765c661595e1bfa4750756a54c006c6f2c697a436bc0726986f71f0706cd) and a [hauppauge sample from dropbox](https://www.dropbox.com/scl/fi/4b1y86efag39sjnmm65hs/all_in_with_chris_hayes_20250326_1958.ts?rlkey=tyid6blj5hvsbyhg1mxs9nvr8&st=557jrkq8&dl=0)
 - There are some issues still pertaining here. There are some weird symbols being printed out with the xmltv files(but the subs are extracted correctly and the exit code is the same as main) and the (-debug) release on linux sometimes gives drops the file descriptor. The other releases work fine.
 - Finished the leftover functions from the stream_functions module from my original Demuxer PR.
-- This week's work focuses on porting the files `ts_tables.c`,`ts_functions.c`,`ts_functions.h`,`ts_info.c`(some parts of it I didn't require),`ts_tables_epg.c`, and `stream_functions.c` to Rust.
+- The last 3 week's work focuses on porting the files `ts_tables.c`,`ts_functions.c`,`ts_functions.h`,`ts_info.c`(some parts of it I didn't require),`ts_tables_epg.c`, and `stream_functions.c` to Rust.
 - Cross Platform Tested on Windows as well and resolved type issues with the TS module.
 - Note - The TS module is a bit slow because of the copying back and forth between rust and C every few chunks(basically the get_more_data implementation which works on most types of files), so maybe we could unplug it in production. We could replug it back to Rust after the core lib_ccx is made in Rust. 
 - Fixed 2 of the Major issues with Week 8's PR, particularly the segfault with xmltv files for windows and the failing Mac test.
 - Resolved all pertaining review comments in the Encoder PR, collaborating with my Mentor.
+
+#### Week 20
+[Pull Request #1725](https://github.com/CCExtractor/ccextractor/pull/1725) <br>
+AND<br>
+Review Changes to [Pull Request #1662](https://github.com/CCExtractor/ccextractor/pull/1662)
+
+- Fixed the Net Module, it was dysfunctional in the main branch. I started by making the changes that were needed to be made in the main branch.
+- Resolved all problems and failing regressions in the Rust port of the net module, which was in-development for the last 2 years.
+- The Rust TCP implementation was fine, after the changes to main. But the UDP implementation needed to be re-written.
+- Rebased the old PR, fixed all formatting and cross-platform issues in the CI. Made sure the regressions are akin to main.
+- Made review changes to [#1662](https://github.com/CCExtractor/ccextractor/pull/1662), collaborating with my Mentor.

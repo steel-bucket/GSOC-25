@@ -130,3 +130,12 @@ Review Changes to [Pull Request #1662](https://github.com/CCExtractor/ccextracto
 - The Rust TCP implementation was fine, after the changes to main. But the UDP implementation needed to be re-written.
 - Rebased the old PR, fixed all formatting and cross-platform issues in the CI. Made sure the regressions are akin to main.
 - Made review changes to [#1662](https://github.com/CCExtractor/ccextractor/pull/1662), collaborating with my Mentor.
+
+#### Week 11
+[Pull Request #1730](https://github.com/CCExtractor/ccextractor/pull/1730)
+
+- Fixed the AVC Functions Module, It was dysfunctional in the main branch and 0.94 because of a null pointer dereference in the rust decoder library.
+- The `encoder_ctx` variable being empty was not taken into consideration which I fixed using a pre-check.
+- Then I made the Rust port of the AVC functions module. Which was successfully ported to Rust.
+- Resolved all failing CI, cross platform compatibility, and failing regressions in the new Rust port.
+- The Rust port of the AVC functions module was tested against [This sample](https://drive.google.com/file/d/1GsxXE3EW9r9UfsRkoLlP2k03p6gLGbLe/view) which is an AVC stream.

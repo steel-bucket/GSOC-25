@@ -139,3 +139,20 @@ Review Changes to [Pull Request #1662](https://github.com/CCExtractor/ccextracto
 - Then I made the Rust port of the AVC functions module. Which was successfully ported to Rust.
 - Resolved all failing CI, cross platform compatibility, and failing regressions in the new Rust port.
 - The Rust port of the AVC functions module was tested against [This sample](https://drive.google.com/file/d/1GsxXE3EW9r9UfsRkoLlP2k03p6gLGbLe/view) which is an AVC stream.
+
+#### Week 12
+[Pull Request #1736](https://github.com/CCExtractor/ccextractor/pull/1736) <br>
+[Pull Request #1737](https://github.com/CCExtractor/ccextractor/pull/1737) <br>
+[Pull Request #1738](https://github.com/CCExtractor/ccextractor/pull/1738) <br>
+AND <br>
+[Pull Requests Report](https://docs.google.com/document/d/1jOlBw3P3rUQlqZn2mifTJDFl8HREnXBHPqurFxknsik/edit?usp=sharing)
+
+- Ported the entire ES Functions module to Rust.
+- This Rust module ports the C libraries `es_functions.c` and `es_userdata.c` to Rust.
+- Resolved all failing CI, maintained cross platform compatibility, and failing regressions in the new Rust port.
+- The Rust port of the ES functions module was tested against [This sample](https://sampleplatform.ccextractor.org/sample/b22260d065ab537899baaf34e78a5184671f4bcb2df0414d05e6345adfd7812f) which is an MPEG-2 ES stream.
+- Resolved the share module - This module was used to make ccextractor work with cctranslate, it's been not updated for about 10 years, it was not working in both the ccextractor main and previous releases. So we decided to remove it. There's a rust port [which I made](https://github.com/CCExtractor/ccextractor/pull/1737/commits/90578eaf9dfe3dd0a3c469819317df449a2f97e1#diff-69ee6a0b9519e3ccd3b8b3dd12ec842d07f0b17de169836acb11ddcf573179cc), which could be merged into rust later if needed.
+- Resolved all failing CI, and regressions which appeared while removing the share module.
+- Made a PR to remove all redundant C code as discussed on zulip. Now all Rust ports are the functional ones.
+- Re-made the entire Mac build process for CCExtractor. It always compiled on Mac with DISABLE_RUST on, this was caught during making the Removal PR and fixed accordingly.
+- Reviewed all 11 Open Pull Requests from outside of the core team by running them locally and then compiled all the results in a [combined report](https://docs.google.com/document/d/1jOlBw3P3rUQlqZn2mifTJDFl8HREnXBHPqurFxknsik/edit?usp=sharing).

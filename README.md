@@ -3,7 +3,7 @@
 ## Re-writing `lib_ccx` Libraries to Rust
 
 **Organization:** [CCExtractor Development](https://summerofcode.withgoogle.com/programs/2025/organizations/ccextractor-development)  
-**Mentors:** Carlos Fernandez Sanz, Willem Van Iseghem, and Prateek Sunal  
+**Mentors:** Prateek Sunal, Carlos Fernandez Sanz, and Willem Van Iseghem   
 **Contributor:** Deepnarayan Sett  
 **Contact:** 22bec038@iiitdmj.ac.in
 
@@ -245,6 +245,30 @@ This project encompasses the work behind rewriting the `lib_ccx` libraries, whic
 - Wrote 5 reports for mentors and future contributors (see below).
 
 ---
+## Pull Requests
+
+| Serial No. | Pull Request                                                  | Heading                                                                 | Status     |
+| ---------- | ------------------------------------------------------------- | ----------------------------------------------------------------------- | ---------- |
+| 1          | [#1738](https://github.com/CCExtractor/ccextractor/pull/1738) | \[FEAT] Removed C code already ported to Rust                           | Open       |
+| 2          | [#1737](https://github.com/CCExtractor/ccextractor/pull/1737) | \[FEAT] Removed the share module                                        | **Merged** |
+| 3          | [#1736](https://github.com/CCExtractor/ccextractor/pull/1736) | \[Rust]Ported ES Module to Rust                                         | Open       |
+| 4          | [#1730](https://github.com/CCExtractor/ccextractor/pull/1730) | \[Rust]Ported AVC Module to Rust                                        | Open       |
+| 5          | [#1725](https://github.com/CCExtractor/ccextractor/pull/1725) | \[Rust] Fixes to Net Module                                             | Open       |
+| 6          | [#1724](https://github.com/CCExtractor/ccextractor/pull/1724) | \[Rust] Finished the TS module                                          | Open       |
+| 7          | [#1720](https://github.com/CCExtractor/ccextractor/pull/1720) | \[Rust]Added XMLTV library to Transport Stream module                   | Open       |
+| 8          | [#1717](https://github.com/CCExtractor/ccextractor/pull/1717) | \[Rust]Added Transport Stream Module                                    | Open       |
+| 9          | [#1713](https://github.com/CCExtractor/ccextractor/pull/1713) | \[Rust]Added MythTV Module                                              | Open       |
+| 10         | [#1712](https://github.com/CCExtractor/ccextractor/pull/1712) | \[Rust] Added MXF module                                                | Open       |
+| 11         | [#1711](https://github.com/CCExtractor/ccextractor/pull/1711) | \[Rust] Added GXF Module                                                | Open       |
+| 12         | [#1710](https://github.com/CCExtractor/ccextractor/pull/1710) | \[FEAT]\[Rust] Added Encoder Module                                     | **Merged** |
+| 13         | [#1708](https://github.com/CCExtractor/ccextractor/pull/1708) | \[FIX] 134 Codes in XDS and General Tests                               | **Merged** |
+| 14         | [#1706](https://github.com/CCExtractor/ccextractor/pull/1706) | Fixed Clippy Errors on 1.88                                             | **Merged** |
+| 15         | [#1695](https://github.com/CCExtractor/ccextractor/pull/1695) | \[FIX] The first TODO in avc\_functions.c and FIXME in avc\_functions.c | Open       |
+| 16         | [#1694](https://github.com/CCExtractor/ccextractor/pull/1694) | \[FIX] Fixed Unit Test Rust based on the new changes on Rust 1.86.0     | **Merged** |
+| 17         | [#1662](https://github.com/CCExtractor/ccextractor/pull/1662) | \[FEAT] added demuxer and file\_functions module                        | Open       |
+| 18         | [#1651](https://github.com/CCExtractor/ccextractor/pull/1651) | \[FEAT] Removed share module from lib\_ccx                              | **Closed** |
+
+---
 
 ## Work Reports
 
@@ -442,7 +466,7 @@ AND <br>
 -   **CI/CD**: GitHub Actions with support across Linux, Windows and Mac across all option permutations
 
 ## Work that's left
-Primarily I have resolved every milestone in my Proposal. I still have to resolve merge conflicts that have accumulated in my PRs over time. The full Rust port is still a long way to go, but I have made a significantly large part of it. The next step for future contributors would be to work on WTV and the rest of the Encoder library.
+Primarily I have resolved every milestone in my Proposal. I still have to resolve merge conflicts that have accumulated in my PRs over time. The full Rust port is still a long way to go, but I have made a significantly large part of it. The next step for future contributors would be to work on WTV and the rest of the Encoder library. I'll also make a C to Rust conversion guide soon.
 
 ## Acknowledgments
 

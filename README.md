@@ -210,7 +210,7 @@ This project encompasses the work behind rewriting the `lib_ccx` libraries, whic
 **Files Ported:** `networking.c`, `networking.h`
 
 - This module mostly takes in a video stream from a TCP or UDP source instead of a file. It's primarily for real-time subtitle extraction (sort of like a socket). Much of the net module was created by previous contributors and had been in development for 2 years before this. I have completed it. The module was broken in both main and the old code. I had to remake the UDP implementation and fix numerous areas, and now the net module is working and fully ported to Rust. I've also written instructions in my PR for anyone who would work on this further.
-- Code can be found [here](https://github.com/CCExtractor/ccextractor/pull/1725/commits).
+- Code can be found [here](https://github.com/CCExtractor/ccextractor/pull/1725).
 
 ---
 
@@ -218,7 +218,7 @@ This project encompasses the work behind rewriting the `lib_ccx` libraries, whic
 
 **Files Ported:** `avc_functions.c`, `avc_functions.h`
 
-- This module extracts subtitles from [Advanced Video Coding](https://en.wikipedia.org/wiki/Advanced_Video_Coding) streams. It was broken for the last few years because of a problem in the decoder module.
+- This module extracts subtitles from [Advanced Video Coding](https://en.wikipedia.org/wiki/Advanced_Video_Coding) streams. It was broken for the last few years because of a problem in the decoder module. I have fixed that and fully ported it to Rust.
 
 > **From Wikipedia:**
 > 

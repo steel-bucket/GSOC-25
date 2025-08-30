@@ -49,7 +49,7 @@ This project encompasses the work behind rewriting the `lib_ccx` libraries, whic
 - There's also a large-scale hyperlinked list library, code [here](https://github.com/steel-bucket/ccextractor/blob/migration-ts-core/src/rust/src/hlist.rs). This is essentially a way to safely deal with multiple data streams in a single file.
 - Code and extensive unit tests can be found [here](https://github.com/steel-bucket/ccextractor/blob/migration-ts-core/src/rust/src/demuxer/demux.rs) and [here](https://github.com/steel-bucket/ccextractor/blob/migration-ts-core/src/rust/src/demuxer/stream_functions.rs).
 
-**Workflow of Demuxer, Stream Functions and File Functions:**
+**High level Workflow of Demuxer, Stream Functions and File Functions:**
 
 <img width="10762" height="2826" alt="demuxer" src="https://github.com/user-attachments/assets/4614c3a3-4b5c-4258-a0a0-5fcdeeba4be6" />
 
@@ -88,7 +88,7 @@ This project encompasses the work behind rewriting the `lib_ccx` libraries, whic
 - The parser scans for MPEG start codes (sequence, GOP, picture, user data) and dispatches to corresponding handlers.
 - Code can be found [here](https://github.com/steel-bucket/ccextractor/tree/migration-es-module/src/rust/src/es).
 
-**Workflow of Bitstream and ES Functions:**
+**High level Workflow of Bitstream and ES Functions:**
 
 <img width="4904" height="2300" alt="es" src="https://github.com/user-attachments/assets/7c5aede7-215c-4149-ab57-2d0a57de9440" />
 
@@ -192,7 +192,7 @@ This project encompasses the work behind rewriting the `lib_ccx` libraries, whic
 
 - Code can be found [here](https://github.com/steel-bucket/ccextractor/tree/migration-ts-core/src/rust/src/transportstream).
 
-**High level Workflow of TS excluding XMLTV which is separate:**
+**High level Workflow of TS (excluding XMLTV which is separate):**
 
 <img width="5422" height="1858" alt="ts" src="https://github.com/user-attachments/assets/372e4871-e5bc-4d7e-92e4-f1b43ab2104f" />
 

@@ -14,7 +14,7 @@
 1. [Synopsis](#synopsis)
 2. [Modules I Worked On](#modules-i-worked-on)
 3. [Other Contributions](#other-contributions)
-4. [Reports Written](#reports-written)
+4. [Work Reports](#work-reports)
 5. [Week-wise Report](#week-wise-report)
 6. [Key Technologies Used](#key-technologies-used)
 7. [Work That's Left](#work-thats-left)
@@ -45,7 +45,7 @@ This project encompasses the work behind rewriting the `lib_ccx` libraries, whic
 
 - This library detects the stream type, reads PES headers, opens and closes files, gets their file size, and much more for most file types (except MP4 files, which have their own suite).
 - This module, alongside file functions, makes up the backbone for TS, GXF, MXF, MythTV, WTV demuxing libraries and many more.
-- This module includes data transfer libraries [1](https://github.com/steel-bucket/ccextractor/blob/migration-ts-core/src/rust/src/libccxr_exports/demuxer.rs) [2](https://github.com/steel-bucket/ccextractor/blob/migration-ts-core/src/rust/src/ctorust.rs) [3](https://github.com/steel-bucket/ccextractor/blob/migration-ts-core/src/rust/src/common.rs) for FFI between C and Rust.
+- This module includes data transfer libraries [1](https://github.com/steel-bucket/ccextractor/blob/migration-ts-core/src/rust/src/libccxr_exports/demuxer.rs) [2](https://github.com/steel-bucket/ccextractor/blob/migration-ts-core/src/rust/src/ctorust.rs) [3](https://github.com/steel-bucket/ccextractor/blob/migration-ts-core/src/rust/src/common.rs) [4](https://github.com/steel-bucket/ccextractor/blob/migration-ts-core/src/rust/src/libccxr_exports/demuxerdata.rs) for FFI between C and Rust.
 - There's also a large-scale hyperlinked list library, code [here](https://github.com/steel-bucket/ccextractor/blob/migration-ts-core/src/rust/src/hlist.rs). This is essentially a way to safely deal with multiple data streams in a single file.
 - Code and extensive unit tests can be found [here](https://github.com/steel-bucket/ccextractor/blob/migration-ts-core/src/rust/src/demuxer/demux.rs) and [here](https://github.com/steel-bucket/ccextractor/blob/migration-ts-core/src/rust/src/demuxer/stream_functions.rs).
 
@@ -127,7 +127,7 @@ This project encompasses the work behind rewriting the `lib_ccx` libraries, whic
 
 > **MXF Guide:** https://tech.ebu.ch/docs/techreview/trev_2010-Q3_MXF-2.pdf
 > 
-> The library first starts by probing the incoming bytes handed over by the demuxer. If it detects an MXF UL prefix, it reads the header partition pack to understand the file's structure and KLV (Key-Length-Value) alignment rules. It then reads the primer pack to learn how keys and local tags map to metadata sets, applying KLV Alignment Grid (KAG) rules to maintain proper alignment and skip filler. Next, it parses header metadata—such as preface, content storage, and tracks—to build a track map that links track IDs to essence streams and captures timing information. Index segments and the packets are read when available for fast seeking; if missing, partition offsets are used instead. The main loop scans for KLV packets, identifies essence types, and routes them to appropriate decoders. Subtitle data is extracted from essence or ancillary packets and timestamped.
+> The library first starts by probing the incoming bytes(1mb) handed over by the demuxer. If it detects an MXF UL prefix, it reads the header partition pack to understand the file's structure and KLV (Key-Length-Value) alignment rules. It then reads the primer pack to learn how keys and local tags map to metadata sets, applying KLV Alignment Grid (KAG) rules to maintain proper alignment and skip filler. Next, it parses header metadata—such as preface, content storage, and tracks—to build a track map that links track IDs to essence streams and captures timing information. Index segments and the packets are read when available for fast seeking; if missing, partition offsets are used instead. The main loop scans for KLV packets, identifies essence types, and routes them to appropriate decoders. Subtitle data is extracted from essence or ancillary packets and timestamped.
 
 - Code and comprehensive unit tests can be found [here](https://github.com/steel-bucket/ccextractor/blob/migration-ts-core/src/rust/src/mxf_demuxer/mxf.rs).
 - This module also includes a data transfer [library](https://github.com/steel-bucket/ccextractor/blob/migration-ts-core/src/rust/src/libccxr_exports/mxf.rs) for FFI between C and Rust.
@@ -192,7 +192,7 @@ This project encompasses the work behind rewriting the `lib_ccx` libraries, whic
 
 - Code can be found [here](https://github.com/steel-bucket/ccextractor/tree/migration-ts-core/src/rust/src/transportstream).
 
-**Workflow of TS:**
+**High level Workflow of TS excluding XMLTV which is separate:**
 
 <img width="5422" height="1858" alt="ts" src="https://github.com/user-attachments/assets/372e4871-e5bc-4d7e-92e4-f1b43ab2104f" />
 
@@ -246,7 +246,7 @@ This project encompasses the work behind rewriting the `lib_ccx` libraries, whic
 
 ---
 
-## Reports Written
+## Work Reports
 
 ### Flutter GUI
 

@@ -247,7 +247,7 @@ This project encompasses the work behind rewriting the `lib_ccx` libraries, whic
 ---
 ## Pull Requests
 
-| Serial No. | Pull Request                                                  | Heading                                                                 | Status     |
+| Sno.       | Pull Request                                                  | Name                                                                    | Status     |
 | ---------- | ------------------------------------------------------------- | ----------------------------------------------------------------------- | ---------- |
 | 1          | [#1738](https://github.com/CCExtractor/ccextractor/pull/1738) | \[FEAT] Removed C code already ported to Rust                           | Open       |
 | 2          | [#1737](https://github.com/CCExtractor/ccextractor/pull/1737) | \[FEAT] Removed the share module                                        | **Merged** |
@@ -263,10 +263,8 @@ This project encompasses the work behind rewriting the `lib_ccx` libraries, whic
 | 12         | [#1710](https://github.com/CCExtractor/ccextractor/pull/1710) | \[FEAT]\[Rust] Added Encoder Module                                     | **Merged** |
 | 13         | [#1708](https://github.com/CCExtractor/ccextractor/pull/1708) | \[FIX] 134 Codes in XDS and General Tests                               | **Merged** |
 | 14         | [#1706](https://github.com/CCExtractor/ccextractor/pull/1706) | Fixed Clippy Errors on 1.88                                             | **Merged** |
-| 15         | [#1695](https://github.com/CCExtractor/ccextractor/pull/1695) | \[FIX] The first TODO in avc\_functions.c and FIXME in avc\_functions.c | Open       |
-| 16         | [#1694](https://github.com/CCExtractor/ccextractor/pull/1694) | \[FIX] Fixed Unit Test Rust based on the new changes on Rust 1.86.0     | **Merged** |
-| 17         | [#1662](https://github.com/CCExtractor/ccextractor/pull/1662) | \[FEAT] added demuxer and file\_functions module                        | Open       |
-| 18         | [#1651](https://github.com/CCExtractor/ccextractor/pull/1651) | \[FEAT] Removed share module from lib\_ccx                              | **Closed** |
+| 15         | [#1694](https://github.com/CCExtractor/ccextractor/pull/1694) | \[FIX] Fixed Unit Test Rust based on the new changes on Rust 1.86.0     | **Merged** |
+| 16         | [#1662](https://github.com/CCExtractor/ccextractor/pull/1662) | \[FEAT] added demuxer and file\_functions module                        | Open       |
 
 ---
 

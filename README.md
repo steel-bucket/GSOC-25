@@ -34,7 +34,7 @@ This project encompasses the work behind rewriting the `lib_ccx` libraries, whic
 
 **Files Ported:** `file_functions.c`, `file_buffer.h`
 
-- This module is the backbone of the demuxer class. It can open unopened files, move incoming bytes back into the demuxer's file buffer, perform reading and seeking operations, and much more.
+- This module is the backbone of the demuxer class. It can open unopened files, move incoming bytes back into the demuxer's file buffer, perform reading and seeking operations, detecting EOFs, and much more.
 - It has been extensively unit tested. Tests and code can be found [here](https://github.com/steel-bucket/ccextractor/blob/migration-ts-core/src/rust/src/file_functions/file.rs).
 
 ---
@@ -108,6 +108,8 @@ This project encompasses the work behind rewriting the `lib_ccx` libraries, whic
 
 > **GXF Guide:** https://pub.smpte.org/pub/st360/st0360-2009_stable2016.pdf
 > 
+> *Overview of Library Workflow*
+> 
 > The library first starts by probing the incoming bytes for the GXF packet 1MB starting array. If detected, it reads a fixed 16-byte packet header, which validates the packet type. The packet is then dispatched to one of five handlers: MAP, MEDIA, FLT, UMF, or EOS (essentially the 5 parts of a GXF stream). MAP packets contain file structure and track information, with the parser extracting media names, track start/end fields, and size, while allocating structures for ancillary and MPEG video tracks. These structures include frame rates, packet sizes, field counts, and timebase information for timestamping. MEDIA packets, containing track headers and payloads, are parsed differently based on track type. For ancillary tracks, the parser extracts SMPTE CDP caption words (CEA-708/608 paths) from AD packets, while MPEG video tracks are read into a buffer for parsing. In cases of errors, it attempts to skip remaining bytes and returns error codes (InvalidArgument, EOF, Retry). EOF and EOS are passed to the caller for file switching or demuxer stopping. Frame rate and timebase utilities convert track descriptors into timestamps for subtitle alignment.
 
 - Code and comprehensive unit tests can be found [here](https://github.com/steel-bucket/ccextractor/blob/migration-ts-core/src/rust/src/gxf_demuxer/gxf.rs).
@@ -126,6 +128,8 @@ This project encompasses the work behind rewriting the `lib_ccx` libraries, whic
 - This library extracts subtitles from [Material Exchange Format](https://en.wikipedia.org/wiki/Material_Exchange_Format) files.
 
 > **MXF Guide:** https://tech.ebu.ch/docs/techreview/trev_2010-Q3_MXF-2.pdf
+> 
+> *Overview of Library Workflow*
 > 
 > The library first starts by probing the incoming bytes(1mb) handed over by the demuxer. If it detects an MXF UL prefix, it reads the header partition pack to understand the file's structure and KLV (Key-Length-Value) alignment rules. It then reads the primer pack to learn how keys and local tags map to metadata sets, applying KLV Alignment Grid (KAG) rules to maintain proper alignment and skip filler. Next, it parses header metadata—such as preface, content storage, and tracks—to build a track map that links track IDs to essence streams and captures timing information. Index segments and the packets are read when available for fast seeking; if missing, partition offsets are used instead. The main loop scans for KLV packets, identifies essence types, and routes them to appropriate decoders. Subtitle data is extracted from essence or ancillary packets and timestamped.
 
@@ -187,6 +191,8 @@ This project encompasses the work behind rewriting the `lib_ccx` libraries, whic
 > TS files are mostly outputs of TV recordings, so working with them is more complex than other file types.
 > 
 > ![File:MPEG Transport Stream HL.svg](https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/MPEG_Transport_Stream_HL.svg/800px-MPEG_Transport_Stream_HL.svg.png)
+> 
+> *Overview of Library Workflow*
 > 
 > Our transport stream demuxer takes in a fixed 188-byte packet, locates the sync byte, and parses packet headers and adaptation fields to obtain the PID, continuity counter, payload unit start, and PCR timing. Payload bytes are routed by PID into two main reassembly paths: PSI section reassembly for tables (PMT tables, PAT tables, etc.) and PES reassembly for media. The PSI logic assembles sections (which we call PSI buffers), validates CRCs, parses PAT to find PMT PIDs, and parses PMTs to build a PID to elementary stream mapping including descriptors that flag subtitles or private data. PES reassembly uses payload unit start and continuity checking to form PES packets; PES headers yield PTS and DTS (essentially timing data). PCR samples from adaptation fields define a system clock used to correct PTS jitter and drift and to align audio and video. Subtitle extraction runs on PES or ancillary streams and supports CEA 608, CEA 708, DVB teletext and DVB subtitles, including CDP parsing when present. EPG is extracted from SI tables such as EIT and SDT, while XMLTV ingestion is a separate alternate workflow that bypasses PSI reassembly.
 
